@@ -2,22 +2,14 @@
 @import url(palette.css);
 
 body {
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--haiti);/* Colore di sfondo di base */
+    margin: 0px 0px;
     position: relative;
 }
 
-#starfield {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+#starfield {    
     z-index: 1;
-    top: 0;
-    left: 0;
+    background-color: var(--haiti);/* Colore di sfondo di base */
 }
-
 
 .star {
     position: absolute;
