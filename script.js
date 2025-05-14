@@ -1,5 +1,5 @@
 const starfield = document.getElementById('starfield');
-const numStars = 500;
+const numStars = 750;
 
 for (let i = 0; i < numStars; i++) {
   const star = document.createElement('div');
