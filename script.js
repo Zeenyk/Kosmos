@@ -1,8 +1,11 @@
 const canvas = document.getElementById('shader-bg-canvas');
 const sandbox = new GlslCanvas(canvas);
 
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
 const d = new Date();
-sandbox.setUniform("u_resolution", window.screen.width, window.screen.height);
+sandbox.setUniform("u_resolution", canvas.width, canvas.height);
 sandbox.setUniform("u_time", d.getTime());
 
 sandbox.load(`
@@ -13,9 +16,10 @@ precision mediump float;
 uniform vec2 u_resolution; // larghezza, altezza in pixel
 uniform float u_time;      // tempo in secondi
 
-const float g_threshold = 0.99;
-const vec3  g_SkyColor   = vec3(0.17, 0.2, 0.5);
-const vec3  g_StarColor  = vec3(0.9, 0.9, 0.9);
+const float g_threshold = 0.9985;
+const vec3  g_TopColor   = vec3(0.0235, 0.0235, 0.1412);
+const vec3  g_BottomColor   = vec3(0.0, 0.0, 0.0);
+const vec3  g_StarColor  = vec3(1.0, 1.0, 1.0);
 
 // discontinuous pseudorandom in [-0.5,+0.5]^3
 vec3 random3(vec3 c) {
@@ -88,7 +92,8 @@ float getStar(vec3 pos, float threshold) {
 void main() {
     vec2 uv = gl_FragCoord.xy / u_resolution.xy;
     // sfondo cielo con gradiente verticale
-    vec3 col = g_SkyColor * (uv.y + 0.25) / 1.25;
+    float t = pow(smoothstep(0.0, 1.0, uv.y), 0.8);
+    vec3 col = mix(g_BottomColor, g_TopColor, t);
     // aggiungi stelle modulate da rumore simplex
     float star = getStar(vec3(uv, u_time), g_threshold);
     float neb  = simplex3d(vec3(uv * 100.0, u_time));
