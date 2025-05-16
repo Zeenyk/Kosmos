@@ -15,8 +15,9 @@ precision mediump float;
 
 uniform vec2 u_resolution; // larghezza, altezza in pixel
 uniform float u_time;      // tempo in secondi
+const float u_seed = 0.8;
 
-const float g_threshold = 0.9985;
+const float g_threshold = 0.7;
 const vec3  g_TopColor   = vec3(0.0235, 0.0235, 0.1412);
 const vec3  g_BottomColor   = vec3(0.0, 0.0, 0.0);
 const vec3  g_StarColor  = vec3(1.0, 1.0, 1.0);
@@ -85,19 +86,22 @@ float Pseudo2dNoise(vec2 pos) {
 
 // genera una “stella” se il valore supera la soglia
 float getStar(vec3 pos, float threshold) {
-    float c = Pseudo2dNoise(pos.xy);
+    float c = simplex3d(vec3(pos.xy, u_seed));
     return (c < threshold) ? 0.0 : c;
 }
 
 void main() {
     vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+    vec2 noiseCoord = gl_FragCoord.xy / u_resolution.x;
+
     // sfondo cielo con gradiente verticale
     float t = pow(smoothstep(0.0, 1.0, uv.y), 0.8);
     vec3 col = mix(g_BottomColor, g_TopColor, t);
     // aggiungi stelle modulate da rumore simplex
-    float star = getStar(vec3(uv, u_time), g_threshold);
-    float neb  = simplex3d(vec3(uv * 100.0, u_time));
-    col += star * g_StarColor * (neb + 0.4) / 1.4;
+    float star = getStar(vec3(noiseCoord * 200.0, u_time), g_threshold);
+    float fog = simplex3d(vec3(noiseCoord * 80.0, u_time * 0.4));
+    col += star * g_StarColor * (fog + 0.4) / 1.4;
+
     gl_FragColor = vec4(col, 1.0);
 }
   `);
