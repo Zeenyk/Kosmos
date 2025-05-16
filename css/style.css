@@ -4,6 +4,7 @@
 body {
     margin: 0px 0px;
     position: relative;
+    background-color: var(--haiti);
 }
 
 #shader-bg-canvas {
