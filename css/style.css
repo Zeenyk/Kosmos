@@ -28,45 +28,53 @@ body {
   display: flex;
   justify-content: space-between;
   height: 95%;
+  padding: 0 1vw;
 }
 
 .logo{
   display: flex;
   align-items: center;
-  width: 70%;
+  width: auto;
   height: 100%;
-  fill: var(--cream) !important;
+  margin: auto 0;
+  fill: var(--zero-point) !important;
 }
 
 .logo .logo-img{
   width: auto;
   height: 60%;
-  margin: auto;
+  margin: auto 1vw auto 0;
 }
 
 .logo h1{
   width: 80%;
   height: 80%;
-  margin: 0;
+  margin: auto 0;
   font-family: Arcane Nine;
-  font-size: 600%;
-  color: var(--cream);
-  
+  font-size: 5vh;
+  color: var(--zero-point);
 }
 
 .interaction{
-  width: 25%;
+  width: auto;
   height: 70%;
-  margin: auto;
-  background-color: var(--cream);
+  margin: auto 0 auto 0; 
+  flex-shrink: 0;
+}
+
+.interaction-content{
+  width: 15vh;
+  height: 100%;
+  background-color: var(--zero-point);
   border-radius: 1000px;  
+  box-sizing: border-box;
 }
 
 .hr{
-  background: var(--cream );
-  width: 95%;
+  background: var(--zero-point );
+  width: auto;
   height: 2.5%;
-  margin: auto;
+  margin: auto 1vw;
 }
 
 .wrapper{
@@ -89,8 +97,8 @@ body {
 
 .navbar{
   width: 95%;
-  height: 75%;
-  background-color: var(--cream);
+  height: 70%;
+  background-color: var(--zero-point);
 
   border-radius: 1000px;
 }
