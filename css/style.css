@@ -1,10 +1,11 @@
 @import url(fonts.css);
 @import url(palette.css);
 
+
 body {
-    margin: 0px 0px;
-    position: relative;
-    background-color: var(--haiti);
+  margin: 0px 0px;
+  position: relative;
+  background-color: var(--haiti);
 }
 
 #shader-bg-canvas {
@@ -15,4 +16,81 @@ body {
   height: 100%;
   z-index: -1;
   pointer-events: none;
+}
+
+.header{
+  height: 8vh;
+  top: 0;
+  left: 0;
+}
+
+.header-content{
+  display: flex;
+  justify-content: space-between;
+  height: 95%;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  width: 70%;
+  height: 100%;
+  fill: var(--cream) !important;
+}
+
+.logo .logo-img{
+  width: auto;
+  height: 60%;
+  margin: auto;
+}
+
+.logo h1{
+  width: 80%;
+  height: 80%;
+  margin: 0;
+  font-family: Arcane Nine;
+  font-size: 600%;
+  color: var(--cream);
+  
+}
+
+.interaction{
+  width: 25%;
+  height: 70%;
+  margin: auto;
+  background-color: var(--cream);
+  border-radius: 1000px;  
+}
+
+.hr{
+  background: var(--cream );
+  width: 95%;
+  height: 2.5%;
+  margin: auto;
+}
+
+.wrapper{
+  height: 100vh;
+
+}
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 8vh;
+
+  display: flex;
+  justify-content: center; /* centrare orizzontalmente */
+  align-items: center; 
+}
+
+.navbar{
+  width: 95%;
+  height: 75%;
+  background-color: var(--cream);
+
+  border-radius: 1000px;
 }
