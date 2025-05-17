@@ -22,13 +22,14 @@ body {
   height: 8vh;
   top: 0;
   left: 0;
+  width: 95vw;
+  margin-left: 2.5vw;
 }
 
 .header-content{
   display: flex;
   justify-content: space-between;
   height: 95%;
-  padding: 0 1vw;
 }
 
 .logo{
@@ -73,8 +74,7 @@ body {
 .hr{
   background: var(--zero-point );
   width: auto;
-  height: 2.5%;
-  margin: auto 1vw;
+  height: 0.15vh;
 }
 
 .wrapper{
