@@ -103,7 +103,7 @@ sandbox.load(`
         float t = pow(smoothstep(0.0, 1.0, uv.y), 0.8);
         vec3 col = mix(g_BottomColor, g_TopColor, t);
         // aggiungi stelle modulate da rumore simplex
-        float star = getStar(vec3(noiseCoord * 80.0, u_time), g_threshold);
+        float star = getStar(vec3(noiseCoord * 150.0, u_time), g_threshold);
         float fog = simplex3d(vec3(noiseCoord * 80.0, u_time * 0.4));
         col += star * g_StarColor * (fog + 0.4) / 1.3;
     
