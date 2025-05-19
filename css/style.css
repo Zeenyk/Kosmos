@@ -19,24 +19,26 @@ body {
 }
 
 .header{
+  width: 100%;
   height: 8vh;
   top: 0;
   left: 0;
-  width: 95vw;
-  margin-left: 2.5vw;
+  background-color: var(--haiti);
 }
 
 .header-content{
+  width: 92.5vw;
+  height: 90%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  height: 95%;
 }
 
 .logo{
-  display: flex;
-  align-items: center;
   width: auto;
   height: 100%;
+  display: flex;
+  align-items: center;
   margin: auto 0;
   fill: var(--zero-point) !important;
 }
@@ -44,12 +46,10 @@ body {
 .logo .logo-img{
   width: auto;
   height: 60%;
-  margin: auto 1vw auto 0;
+  margin: 0 1vh 0 auto;
 }
 
 .logo h1{
-  width: 80%;
-  height: 80%;
   margin: auto 0;
   font-family: Arcane Nine;
   font-size: 5vh;
@@ -72,9 +72,10 @@ body {
 }
 
 .hr{
-  background: var(--zero-point );
-  width: auto;
+  width: 92.5vw;
   height: 0.15vh;
+  margin: 0 auto;
+  background: var(--zero-point );
 }
 
 .wrapper{
@@ -96,7 +97,7 @@ body {
 }
 
 .navbar{
-  width: 95%;
+  width: 42.5vh;
   height: 70%;
   background-color: var(--zero-point);
 
