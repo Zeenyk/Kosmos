@@ -1,14 +1,19 @@
 @import url(fonts.css);
 @import url(palette.css);
 
+:root{/**/
+  --general-width: 11vw;
+  --general-height: 8vh;
+  --font-size: 
+}
 
-body {
+body {/**/
   margin: 0px 0px;
   position: relative;
   background-color: var(--haiti);
 }
 
-#shader-bg-canvas {
+#shader-bg-canvas {/**/
   position: fixed;
   top: 0;
   left: 0;
@@ -18,88 +23,82 @@ body {
   pointer-events: none;
 }
 
-.header{
-  width: 100%;
-  height: 8vh;
-  top: 0;
-  left: 0;
+.header{/**/
+  width: calc(var(--general-width)*8);
+  height: var(--general-height);
+  margin: auto;
   background-color: var(--haiti);
 }
 
-.header-content{
-  width: 92.5vw;
-  height: 90%;
-  margin: 0 auto;
+.header-content{/**/
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.logo{
+.logo{/**/
   width: auto;
-  height: 90%;
+  height: 100%;
   display: flex;
   align-items: center;
-  margin: auto 0;
-  fill: var(--zero-point) !important;
-  font-size: 2.3vh;
+
+  font-family: Arcane Nine;
+  font-size: 2vh;
+  color: var(--zero-point);
 }
 
-.logo .logo-img{
+.logo .logo-img{/**/
   width: auto;
   height: 60%;
   margin: 0 0.5vh 0 0;
 }
 
-.logo h1{
-  margin: auto 0;
-  font-family: Arcane Nine;
-  color: var(--zero-point);
-}
-
-.interaction{
-  width: auto;
-  height: 60%;
-  margin: auto 0 auto 0; 
-  flex-shrink: 0;
-}
-
-.interaction-content{
-  width: 12.5vh;
-  height: 100%;
+.interaction{/**/
+  width: var(--general-width);
+  height: calc(var(--general-height)*0.6);
   background-color: var(--zero-point);
   border-radius: 1000px;  
   box-sizing: border-box;
 }
 
-.hr{
-  width: 92.5vw;
+.hr{ /**/
+  width: auto;
   height: 0.15vh;
-  margin: 0 auto;
   background: var(--zero-point );
 }
 
-.wrapper{
-  height: 100vh;
-
-}
-
-.footer{
+.footer{/**/
   position: fixed;
   bottom: 0;
   left: 0;
 
   width: 100%;
-  height: 8vh;
+  height: var(--general-height);
 
   display: flex;
-  justify-content: center; /* centrare orizzontalmente */
+  justify-content: center;
   align-items: center; 
 }
 
-.navbar{
-  width: 35vh;
-  height: 70%;
+.navbar{ /**/
+  width: calc(var(--general-height)*4);
+  height: calc(var(--general-height)*0.6);
   background-color: var(--zero-point);
-
   border-radius: 1000px;
+}
+
+.wrapper{/**/
+  width: calc(var(--general-width)*8);
+  margin: auto;
+  display: flex;
+}
+
+.primary{
+  background-color: var(--periwinkle);
+}
+
+.accent{
+  background-color: var(--blue-nebula);
 }
