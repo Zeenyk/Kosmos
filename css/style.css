@@ -32,6 +32,9 @@ body {/**/
   height: var(--general-height);
   margin: auto;
   background-color: var(--haiti);
+
+  transition: all 0.3s ease;
+  z-index: 10;
 }
 
 .header-content{/**/
