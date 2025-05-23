@@ -1,0 +1,19 @@
+{
+    "name": "Kosmos",
+    "short_name": "Kosmos",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0e0e2c",
+    "theme_color": "#1a1a40",
+    "orientation": "portrait",
+    "icons": [
+      {
+        "src": "logos/logo.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
+    ],
+    "description": "Kosmos: esplora l'universo della conoscenza in un'esperienza immersiva e intuitiva."
+  }
+  

@@ -7,6 +7,17 @@
         <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js"></script>
         <link rel="stylesheet" href="css/style.css">
         <meta name="portrait" content="width=device-width, initial-scale=1.0">
+
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#060624" />
+        <link rel="icon" href="/logos/logo.png" sizes="512x512" type="image/png" />
+        <script>
+            if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(reg => console.log('Service Worker registrato:', reg))
+                .catch(err => console.error('Errore SW:', err));
+            }
+        </script>
     </head>
     <body>
         <canvas id="shader-bg-canvas"></canvas>
