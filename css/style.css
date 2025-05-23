@@ -7,6 +7,10 @@
   --font-size: 
 }
 
+html{
+  background-color: var(--haiti);
+}
+
 body {/**/
   margin: 0px 0px;
   position: relative;
