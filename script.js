@@ -124,6 +124,8 @@ window.addEventListener('scroll', () => {
     } else if (currentScrollY < lastScrollY) {
       section.style.position = 'absolute';
     }
+
+    if(currentScrollY<0) section.style.top = currentScrollY;
   });
 
   lastScrollY = currentScrollY;
