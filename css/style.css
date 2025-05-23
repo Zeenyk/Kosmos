@@ -4,7 +4,7 @@
 :root{/**/
   --general-width: 11vw;
   --general-height: 8vh;
-  --font-size: 
+  --font-size: 2vh;
 }
 
 html{
@@ -52,7 +52,7 @@ body {/**/
   align-items: center;
 
   font-family: Arcane Nine;
-  font-size: 2vh;
+  font-size: var(--font-size);
   color: var(--zero-point);
 }
 
@@ -113,12 +113,22 @@ body {/**/
   width: calc(var(--general-width)*8);
   margin: auto;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .primary{
   background-color: var(--periwinkle);
+  border-radius: var(--font-size);
+  margin: var(--font-size) 0;
 }
 
 .accent{
   background-color: var(--blue-nebula);
+  border-radius: var(--font-size);
+}
+
+.content{
+  height: calc(var(--general-width)*7);
+  width: calc(var(--general-width)*7);
 }
