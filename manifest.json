@@ -2,7 +2,7 @@
     "name": "Kosmos",
     "short_name": "Kosmos",
     "start_url": "/",
-    "display": "standalone",
+    "display": "fullscreen",
     "background_color": "#0e0e2c",
     "theme_color": "#1a1a40",
     "orientation": "portrait",
