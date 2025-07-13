@@ -4,6 +4,8 @@
     <head>
         <title>Kosmos</title>
         <script src="script.js" defer></script>
+        <script src="login.js" defer></script>
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
         <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js"></script>
         <link rel="stylesheet" href="css/style.css">
         <meta name="portrait" content="width=device-width, initial-scale=1.0">
@@ -21,10 +23,9 @@
         </div>
 
         
-        <script src="https://accounts.google.com/gsi/client" async defer></script>
         <div id="g_id_onload"
-             data-client_id="YOUR_CLIENT_ID"
-             data-callback="handleCredentialResponse">
+             data-client_id="750317352014-u7ev770g1a0oakjd0b6tr6i0f6t6hr9f.apps.googleusercontent.com"
+             data-callback="onSignIn">
         </div>
         <div class="g_id_signin" data-type="standard"></div>
 
