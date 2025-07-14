@@ -5,8 +5,6 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const d = new Date();
-sandbox.setUniform("u_resolution", canvas.width, canvas.height);
-sandbox.setUniform("u_time", d.getTime());
 
 function isPortrait() {
     return window.matchMedia("(orientation: portrait)").matches;
@@ -20,7 +18,7 @@ sandbox.load(`
     
     uniform vec2 u_resolution; // larghezza, altezza in pixel
     uniform float u_time;      // tempo in secondi
-    const float u_seed = 0.8;
+    uniform float u_seed;
     
     const float g_threshold = 0.7;
     const vec3  g_TopColor   = vec3(0.0235, 0.0235, 0.1412);
@@ -110,6 +108,8 @@ sandbox.load(`
         gl_FragColor = vec4(col, 1.0);
     }
 `);
+
+sandbox.setUniform("u_seed", Math.random());
 
 
 let lastScrollY = window.scrollY;
